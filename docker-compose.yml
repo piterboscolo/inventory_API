@@ -1,0 +1,16 @@
+version: '3'
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    environment:
+      NODE_ENV: development
+      DB_HOST_LOCAL: host.docker.internal
+    env_file: ./.env
+    ports:
+      - 3004:3004
+    volumes:
+      - .:/app
+      - /app/node_modules
+    command: npm run start:dev

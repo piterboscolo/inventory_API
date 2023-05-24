@@ -1,0 +1,7 @@
+node_modules
+.idea
+.nvmrc
+.env
+.vscode
+package-lock.json
+testSendEmail/report.json

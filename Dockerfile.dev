@@ -1,0 +1,12 @@
+FROM node:current-alpine3.16
+
+WORKDIR /app
+
+COPY package*.json .
+RUN npm install --force
+
+COPY . .
+
+EXPOSE 3004
+
+CMD ["npm", "start"]

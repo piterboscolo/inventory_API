@@ -1,0 +1,73 @@
+{
+  "name": "inventory-api",
+  "version": "2.0.0",
+  "description": "inventory - API Server",
+  "main": "index.mjs",
+  "scripts": {
+    "start": "node app.mjs",
+    "start:dev": "nodemon -L --trace-warnings app.mjs",
+    "debug": "NODE_ENV=development DEBUG=express:* nodemon app.mjs",
+    "startwin": "SET NODE_ENV=development && nodemon --trace-warnings app.mjs",
+    "debugwin": "SET NODE_ENV=development SET DEBUG=express:* && nodemon app.mjs",
+    "testwin": "SET NODE_TEST=true && mocha --require-esm --recursive ./test/**/*.mjs --exit",
+    "testSendEmailWin": "SET NODE_TEST=true && mocha ./test/**/*.mjs --reporter json --reporter-options output=./testSendEmail/report.json --exit && SET DEVELOPER=***** && node ./testSendEmail/startEmail.mjs",
+    "testSendEmail": "NODE_TEST=true && mocha ./test/**/*.mjs --reporter json --reporter-options output=./testSendEmail/report.json --exit && DEVELOPER=*** && node ./testSendEmail/startEmail.mjs",
+    "test": "NODE_TEST=true && mocha --require-esm --recursive ./test/**/*.mjs",
+    "lint": "eslint . --ext .mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/piterboscolo/inventory"
+  },
+  "author": "InventoryDP",
+  "contributors": [
+    "",
+    ""
+  ],
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/piterboscolo/inventory"
+  },
+  "homepage": "https://github.com/piterboscolo/inventory",
+  "dependencies": {
+    "ajv": "^6.12.6",
+    "ajv-formats": "^2.1.1",
+    "ajv-i18n": "^4.2.0",
+    "amazon-cognito-identity-js": "^5.2.4",
+    "aws-sdk": "^2.1194.0",
+    "axios": "^0.27.2",
+    "compression": "^1.7.4",
+    "cors": "^2.8.5",
+    "crypto": "^1.0.1",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "firebase-admin": "^11.5.0",
+    "fs": "^0.0.1-security",
+    "jsonwebtoken": "^8.5.1",
+    "jwk-to-pem": "^2.0.5",
+    "mongodb": "^3.7.3",
+    "multer": "1.4.4",
+    "multer-s3": "2.10.0",
+    "swagger-ui-express": "^4.3.0",
+    "uuid": "^8.3.2",
+    "uuid-mongodb": "^2.4.4",
+    "winston": "^3.8.2"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "chai": "^4.3.4",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.24.2",
+    "faker": "^5.5.3",
+    "husky": "^7.0.4",
+    "lint-staged": "^12.3.4",
+    "mocha": "^10.0.0",
+    "mongodb-memory-server": "^8.5.2",
+    "nodemon": "^2.0.15",
+    "request": "^2.88.2",
+    "should": "^13.2.3",
+    "uuid-validate": "0.0.3"
+  }
+}
