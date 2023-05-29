@@ -10,6 +10,12 @@ class Inventory {
       .save(this.collection, inventory)
   }
 
+  async update(inventory) {
+    return this
+      .repository
+      .update(this.collection, inventory)
+  }
+
   async getByStatus(inventory, pagination) {
     const data = await this
       .repository

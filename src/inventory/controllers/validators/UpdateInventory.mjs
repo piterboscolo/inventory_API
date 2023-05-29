@@ -36,6 +36,8 @@ const schemaInventory = {
 }
 
 async function validate(data) {
+  data.series = data.series.toString ()
+  data.patrimony = data.patrimony.toString ()
   const validateInventory = ajv.compile(schemaInventory)
   const result = validateInventory(data)
 
