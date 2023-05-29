@@ -84,6 +84,20 @@ class Mongo {
       )
   }
 
+  update(collection, data) {
+    const { _id } = data
+    // eslint-disable-next-line no-param-reassign
+    delete data._id
+
+    return this.connection
+      .collection(collection)
+      .updateOne(
+        { _id },
+        { $set: data },
+        { upsert: false }
+      )
+  }
+
   get(collection, id) {
     return this.connection
       .collection(collection)

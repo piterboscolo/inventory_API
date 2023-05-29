@@ -44,21 +44,22 @@ export default
         {
           in: 'query',
           name: 'type',
-          description: 'Update type',
+          description: 'Material type',
           required: false,
+          example: 'Computador',
           type: 'string'
         },
         {
           in: 'query',
           name: 'model',
-          description: 'Update model',
+          description: 'Material model',
           required: false,
           type: 'string'
         },
         {
           in: 'query',
           name: 'brand',
-          description: 'Update brand',
+          description: 'Material brand',
           required: false,
           type: 'string'
         },
@@ -123,7 +124,6 @@ export default
       }
       }
     },
-  // inventory post module without required id
   '/v1/inventory/': {
     post: {
         summary: 'Create inventory',
@@ -214,6 +214,57 @@ export default
         },
         500: {
           description: 'Internal server Error'
+        }
+      }
+    },
+    put: {
+      summary: 'Update user',
+      tags: ['Users'],
+      description: 'Update user',
+      parameters: [
+        {
+          in: 'query',
+          name: 'id',
+          description: 'Require user id',
+          required: true,
+          type: 'string'
+        },
+        {
+          in: 'query',
+          name: 'cpf',
+          description: 'CPF user update',
+          required: false,
+          example: '(11122233300) eleven numbers without dots and digits',
+          type: 'string'
+        },
+        {
+          in: 'query',
+          name: 'name',
+          description: 'Name user update',
+          required: false,
+          type: 'string'
+        },
+        {
+          in: 'query',
+          name: 'email',
+          description: 'E-mail user update',
+          required: false,
+          type: 'string'
+        }
+      ],
+      responses: {
+        201: {
+          description: 'User successfully changed'
+        },
+        400: {
+          description: 'Bad Request'
+        },
+        404: {
+          description: 'Not found'
+        },
+
+        500: {
+          description: 'Internal Server Error'
         }
       }
     },
