@@ -1,6 +1,6 @@
 class Inventory {
   constructor(repositoryImpl) {
-    this.collection = 'inventory'
+    this.collection = 'assign'
     this.repository = repositoryImpl
   }
 

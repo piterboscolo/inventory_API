@@ -3,14 +3,15 @@ import UUIDGenerator from '../../support/UUIDGenerator.mjs'
 
 const presenterMap = (data) => {
   const resultInventorySpecifications = data.map((Temp) => {
-    let id = UUIDGenerator.from(Temp._id)
+  let id = UUIDGenerator.from(Temp._id)
 
     let result = {
-      id: id.toString(),
-      language: Temp.language,
-      type: Temp.type,
-      idType: Temp.idType,
-      yearsUsefulLife: Temp.yearsUsefulLife
+    id: id.toString(),
+    brand: Temp.brand,
+    model: Temp.model,
+    patrimony: Temp.patrimony,
+    series: Temp.series,
+    created_at: Temp.created_at
     }
 
     return result
@@ -21,7 +22,7 @@ const presenterMap = (data) => {
 
 const presenter = async (data) => {
   let result = {
-    id: UUIDGenerator.from(data._id).toString(),
+    //id: UUIDGenerator.from(data._id).toString(),
     brand: data.brand,
     model: data.model,
     patrimony: data.patrimony,

@@ -22,10 +22,8 @@ const presenterMap = (data) => {
 const presenter = async (data) => {
   let result = {
     id: UUIDGenerator.from(data._id).toString(),
-    brand: data.brand,
-    model: data.model,
-    patrimony: data.patrimony,
-    series: data.series,
+    idUser: UUIDGenerator.from(data.idUser).toString(),
+    idInventory: UUIDGenerator.from(data.idInventory).toString(),
     created_at: data.created_at
 
   }
