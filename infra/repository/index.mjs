@@ -40,11 +40,11 @@ class RepositoryWrapper {
     )
   }
 
-  async searchInventoryByStatus(inventory, pagination) {
-    const statement = this.queries.searchInventoryByStatus
+  async searchInventoryList(params, pagination) {
+    const statement = this.queries.searchInventoryList
     return this.impl.find(
       statement.collection,
-      statement.query(inventory),
+      statement.query(params),
       pagination
     )
   }

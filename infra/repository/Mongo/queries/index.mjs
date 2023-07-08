@@ -1,8 +1,8 @@
-// import { default as searchByIdentity } from './searchByIdentity.mjs'
+import { default as searchInventoryList } from './searchInventoryList.mjs'
 
 
 export {
 
-//   searchByIdentity,
+searchInventoryList,
 
-       }
+    }
