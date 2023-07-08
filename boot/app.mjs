@@ -37,8 +37,7 @@ export default async (app) => {
 
   await registerProviders(app)
 
-  const server = boot(app)
-  ExceptionHandler.handle(app, server)
+  ExceptionHandler.handle(app)
+  boot(app)
 
-  process.send && process.send('ready')
-}
+  }
